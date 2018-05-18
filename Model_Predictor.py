@@ -1,3 +1,10 @@
+"""LUX AI
+Timo Johann, Cyril de Catheu
+05/18/2018
+Purpose of the file : predictions function.
+main can be ran on a single line (consumer info) to predict its cluster
+main is meant to be served with an API endpoint (not implemented)"""
+
 import pickle
 import csv
 import pandas as pd
@@ -8,7 +15,6 @@ from sklearn.cluster import KMeans
 def inputDataPreProcessor(inputData,mlb, le3, le4, le5, le6, le7, le8, le9, le11, encoder,scaler):
     """Takes in input a line from merged_table that was transformed in a list (or one line dataframe),
     transform it into a line that can be used by our model"""
-
     """MLB step"""
     #create a copy of the input list
     inputData_processed = inputData[:]
@@ -23,7 +29,6 @@ def inputDataPreProcessor(inputData,mlb, le3, le4, le5, le6, le7, le8, le9, le11
 
     #add new mlb list to input_data
     inputData_processed += [int(e) for e in mlb_affinites[0]]
-
 
     """label encoding"""
     inputData_processed[3] = le3.transform([inputData_processed[3]])[0]
@@ -50,14 +55,14 @@ def inputDataPreProcessor(inputData,mlb, le3, le4, le5, le6, le7, le8, le9, le11
 def main(data_string, filename="model.pickle"):
     '''Load a model, then realize a prediction
     Input : line with same layout as in csv merged_Table'''
-
     #we suppose the filename is good and the model exists
 
     #open the model
     modeller = pickle.load(open(filename, 'rb'))
 
     #data will first come as a json through api call, but we supposed there are sent there as a coma separated string line
-    inputData = data_string.split(" ") #TODO change separator if it's easier
+    inputData = data_string.split(" ")
+
     #removing NULL value
     inputData = [0 if e =='NULL' else e for e in inputData]
 
@@ -69,10 +74,10 @@ def main(data_string, filename="model.pickle"):
 
 
 def excel_string_to_call_string(string):
-    """USELESS Function to be able to copy paste lines from csv opened in excel
+    """NOT USED: Function to be able to copy paste lines from csv opened in excel
     Not really usefull for us but may be usefull for functional team"""
     """Form of line from csv opened in excel:
-    1753340, 70, 41.0, 1.0, F, H, NULL, S, S, Metro, Urban, 0, 61 - 70, 1753340, "a1010,a17899,a31722,a31723,a42311,a42338,a48058,a7401,a792,a163,a2023,a31729,a54370,a114,a17706,a31728,a33321,a54366,a31230,a672,a704,a10242,a110,a42318,a791,a132,a193,a54471,a717,a397,a542,a100,a111,a164,a183,a245,a33320,a790,a127,a146,a151,a42132" """
+    1753340,70, 41.0, 1.0, F, H, NULL, S, S, Metro, Urban, 0, 61 - 70, 1753340, "a1010,a17899,a31722,a31723,a42311,a42338,a48058,a7401,a792,a163,a2023,a31729,a54370,a114,a17706,a31728,a33321,a54366,a31230,a672,a704,a10242,a110,a42318,a791,a132,a193,a54471,a717,a397,a542,a100,a111,a164,a183,a245,a33320,a790,a127,a146,a151,a42132" """
     list_temp = string.split(', ')
     del list_temp[0]
     del list_temp[12]
@@ -98,9 +103,9 @@ def csv_list_to_call_string(csv_list):
     return(s)
 
 
-def csv_opener(filepath="model.pickle"):
+def csv_opener():
     """open a csv file and return a list of string callable by the main function"""
-    with open('merged_Table.csv') as csvfile:
+    with open('StatSocialJoinedData.csv') as csvfile:
         data = list(csv.reader(csvfile))
         data = data
         data.pop(0)
@@ -108,8 +113,7 @@ def csv_opener(filepath="model.pickle"):
     return data_string
 
 
-
-def test_function():
+def test_function(filename):
     """Put tests in this function if needed"""
     """This is the form of the input string I decided. It is different from the one in dataset sry"""
     string1 = "70 41 1.0 F H NULL S S Metro Urban 0 61-70 a1010,a17899,a31722,a31723,a42311,a42338,a48058,a7401,a792,a163,a2023,a31729,a54370,a114,a17706,a31728,a33321,a54366,a31230,a672,a704,a10242,a110,a42318,a791,a132,a193,a54471,a717,a397,a542,a100,a111,a164,a183,a245,a33320,a790,a127,a146,a151,a42132"
@@ -120,9 +124,8 @@ def test_function():
     test_lines=csv_opener()[:20]
 
     for v in test_lines:
-        print(main(v,"yeah_model.pickle"))
+        print(main(v,filename))
 
-test_function()
 
 
 
