@@ -18,33 +18,30 @@ Python >= ???:
 
 ## Prediction Technical Specifications:
 ### Data:
-	The data is from the UCI Machine Learning Repository Heart Disease Data Set: 
-	https://archive.ics.uci.edu/ml/datasets/Heart-Disease
-	procesessed.cleveland.data contains 303 samples with 13 input features, and target value.
-	procesessed.all.data contains 920 samples. Data is more sparse in this dataset.
+	The dataset was provided in the context of the an internal Accenture Hackathon. It will not be made public.  
 
  
 ### Input Features :
-consumer_id - Not used
-exact_age - integer
-length_of_residence -  integer
-num_adults - integer
-gender - categorical
-homeowner - categorical 
-pres_kids - categorical
-hh_marital_status - categorical 
-dwell_type - categorical
-metro_nonmetro - categorical
-urban_rural_flag - categorical
-flag_pres_kids_true - categorical
-age_range - categorical
-consumer_id - Not used (duplicate)
-affinities - List of affinities ID
+consumer_id - Not used  
+exact_age - integer  
+length_of_residence -  integer  
+num_adults - integer  
+gender - categorical  
+homeowner - categorical   
+pres_kids - categorical  
+hh_marital_status - categorical   
+dwell_type - categorical  
+metro_nonmetro - categorical  
+urban_rural_flag - categorical  
+flag_pres_kids_true - categorical  
+age_range - categorical  
+consumer_id - Not used (duplicate)  
+affinities - List of affinities ID  
 
 ### Feature encoding:
 	All categorical features are converted to binary using a 
-	one-hot encoder.
-  The list of affinities ID is processed with a multiLabelBinarizer. This results in a very large number of columns. SEE NEXT STEPS.
+	one-hot encoder.  
+        The list of affinities ID is processed with a multiLabelBinarizer. This results in a very large number of columns. SEE NEXT STEPS.
 
 ### Feature normalization:
 	All numbers are scaled using a standard scaler. SEE NEXT STEPS (SHOULD BE REALS FEATURES ONLY)
