@@ -107,14 +107,24 @@ def csv_opener(filepath="model.pickle"):
     data_string = [csv_list_to_call_string(e) for e in data]
     return data_string
 
-"""This is the form of the input string I decided. It is different from the one in dataset sry"""
-string1 = "70 41 1.0 F H NULL S S Metro Urban 0 61-70 a1010,a17899,a31722,a31723,a42311,a42338,a48058,a7401,a792,a163,a2023,a31729,a54370,a114,a17706,a31728,a33321,a54366,a31230,a672,a704,a10242,a110,a42318,a791,a132,a193,a54471,a717,a397,a542,a100,a111,a164,a183,a245,a33320,a790,a127,a146,a151,a42132"
-prediction1 = main(string1, "yeah_model.pickle")
 
-print(prediction1)
 
-test_lines=csv_opener()[:5]
+def test_function():
+    """Put tests in this function if needed"""
+    """This is the form of the input string I decided. It is different from the one in dataset sry"""
+    string1 = "70 41 1.0 F H NULL S S Metro Urban 0 61-70 a1010,a17899,a31722,a31723,a42311,a42338,a48058,a7401,a792,a163,a2023,a31729,a54370,a114,a17706,a31728,a33321,a54366,a31230,a672,a704,a10242,a110,a42318,a791,a132,a193,a54471,a717,a397,a542,a100,a111,a164,a183,a245,a33320,a790,a127,a146,a151,a42132"
+    prediction1 = main(string1, "yeah_model.pickle")
 
-for v in test_lines:
-    print(main(v,"yeah_model.pickle"))
+    print(prediction1)
+
+    test_lines=csv_opener()[:20]
+
+    for v in test_lines:
+        print(main(v,"yeah_model.pickle"))
+
+test_function()
+
+
+
+
 

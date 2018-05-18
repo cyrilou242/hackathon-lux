@@ -16,7 +16,7 @@ def spliter(element):
 def preprocess(filename):
     df2 = pd.read_csv(filename)
 
-    df = df2[:10]
+    df = df2[:1000]
 
     del df['dataservices_datastream_raw_consumer_id']
     # Transform string list into list of string
