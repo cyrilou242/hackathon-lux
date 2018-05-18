@@ -16,7 +16,7 @@ def spliter(element):
 def preprocess(filename):
     df2 = pd.read_csv(filename)
 
-    df = df2[:10]
+    df = df2[:4000]
 
     del df['dataservices_datastream_raw_consumer_id']
     # Transform string list into list of string
@@ -67,13 +67,13 @@ data_array = data.values
 
 #column 3
 le3 = LabelEncoder()
-new_column3 = le3.fit_transform(data_array[:, 3].astype(str)) #FIXME added astype, remove if it doesn't work on other machine
+new_column3 = le3.fit_transform(data_array[:, 3].astype(str))
 # replace old column with integers
 data_array[:, 3] = new_column3
 
 #column 4
 le4 = LabelEncoder()
-new_column4 = le4.fit_transform(data_array[:, 4].astype(str)) #FIXME added astype, remove if it doesn't work on other machine
+new_column4 = le4.fit_transform(data_array[:, 4].astype(str))
 # replace old column with integers
 data_array[:, 4] = new_column4
 
@@ -82,37 +82,37 @@ print(data_array[:,5])
 
 #column 5
 le5 = LabelEncoder()
-new_column5 = le5.fit_transform(data_array[:, 5].astype(str)) #FIXME added astype, remove if it doesn't work on other machine
+new_column5 = le5.fit_transform(data_array[:, 5].astype(str))
 # replace old column with integers
 data_array[:, 5] = new_column5
 
 #column 6
 le6 = LabelEncoder()
-new_column6 = le6.fit_transform(data_array[:, 6].astype(str)) #FIXME added astype, remove if it doesn't work on other machine
+new_column6 = le6.fit_transform(data_array[:, 6].astype(str))
 # replace old column with integers
 data_array[:, 6] = new_column6
 
 #column 7
 le7 = LabelEncoder()
-new_column7= le7.fit_transform(data_array[:, 7].astype(str)) #FIXME added astype, remove if it doesn't work on other machine
+new_column7= le7.fit_transform(data_array[:, 7].astype(str))
 # replace old column with integers
 data_array[:, 7] = new_column7
 
 #column 8
 le8 = LabelEncoder()
-new_column8= le8.fit_transform(data_array[:, 8].astype(str)) #FIXME added astype, remove if it doesn't work on other machine
+new_column8= le8.fit_transform(data_array[:, 8].astype(str))
 # replace old column with integers
 data_array[:, 8] = new_column8
 
 #column 9
 le9 = LabelEncoder()
-new_column9= le9.fit_transform(data_array[:, 9].astype(str)) #FIXME added astype, remove if it doesn't work on other machine
+new_column9= le9.fit_transform(data_array[:, 9].astype(str))
 # replace old column with integers
 data_array[:, 9] = new_column9
 
 #column 11
 le11 = LabelEncoder()
-new_column11= le11.fit_transform(data_array[:, 11].astype(str)) #FIXME added astype, remove if it doesn't work on other machine
+new_column11= le11.fit_transform(data_array[:, 11].astype(str))
 # replace old column with integers
 data_array[:, 11] = new_column11
 
