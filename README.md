@@ -4,7 +4,7 @@
 This is an implementation of clustering algorithms for a consumer dataset. It was developped in 2 days for an internal Accenture hackathon.
 The dataset can't not be published. You can find dummy examples in the file [clusters-examples.csv](clusters-examples.csv).
 
-Authors: [Timo Johann](https://github.com/TimoJay), Cyril de Catheu  
+Authors: [Timo Johann](https://github.com/TimoJay), Cyril de Catheu  - Fast paced pair programming
 Created: 17-05-2018  
 Last Modified: 18-05-2018  
 Tested on OS X Sierra, Windows 10  
