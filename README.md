@@ -46,19 +46,25 @@ The list of affinities ID is processed with a multiLabelBinarizer. This results 
 All numbers are scaled using a standard scaler.
 
 ### Machine Learning Algorithm:
+The detailed results of the different algorithms will not be made public.
 #### KMeans
+No interesting results. Too dig
 
 #### AffinityPropagation
+Really promising results, 4 relevant clusters.
 		
 #### AgglomerativeClustering
+Not tested in depth
     
 #### Birch
+Not tested in depth
 
-## Next Steps :	
+## Next Steps :
 Explore other solutions than multilabelBinarization on 50k values.
-Normalize only real values.
+Normalize only real values?
 Rework one-hot encoding.
 Test other algorithms.
+Consider only some types of affinities (using the taxonomy of the activities)
 Tune  algorithms parameters.
 PCA before/after clustering.
 Run clustering on whole dataset, label the dataset with the results, run supervised algorithm to spot interesting features by clusters.
