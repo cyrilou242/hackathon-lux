@@ -100,7 +100,7 @@ def csv_list_to_call_string(csv_list):
 
 def csv_opener(filepath="model.pickle"):
     """open a csv file and return a list of string callable by the main function"""
-    with open('merged_Table.csv', newline='') as csvfile:
+    with open('merged_Table.csv') as csvfile:
         data = list(csv.reader(csvfile))
         data = data
         data.pop(0)
