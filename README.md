@@ -39,12 +39,11 @@ consumer_id - Not used (duplicate)
 affinities - List of affinities ID  
 
 ### Feature encoding:
-	All categorical features are converted to binary using a 
-	one-hot encoder.  
-        The list of affinities ID is processed with a multiLabelBinarizer. This results in a very large number of columns. SEE NEXT STEPS.
+All categorical features are converted to binary using a one-hot encoder.  
+The list of affinities ID is processed with a multiLabelBinarizer. This results in a very large number of columns. SEE NEXT STEPS.
 
 ### Feature normalization:
-	All numbers are scaled using a standard scaler. SEE NEXT STEPS (SHOULD BE REALS FEATURES ONLY)
+All numbers are scaled using a standard scaler. SEE NEXT STEPS (SHOULD BE REALS FEATURES ONLY)
 
 ### Machine Learning Algorithm:
 #### KMeans
