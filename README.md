@@ -10,8 +10,8 @@ Last Modified: 18-05-2018
 Tested on OS X Sierra, Windows 10  
 
 ## Requires:
-Python >= ???: 
-	Python package dependencies:  
+Python >= ???:   
+	Python package dependencies:    
 		sklearn >= ???  
 		numpy   >= ???  
 		pandas  >= ???
@@ -64,9 +64,11 @@ Explore other solutions than multilabelBinarization on 50k values.
 Normalize only real values?
 Rework one-hot encoding.
 Test other algorithms.
-Consider only some types of affinities (using the taxonomy of the activities)
+Consider/focus only some types of affinities (using the taxonomy of the activities)
 Tune  algorithms parameters.
 PCA before/after clustering.
 Run clustering on whole dataset, label the dataset with the results, run supervised algorithm to spot interesting features by clusters.
-
+Implement with sparse matrixes.
+Try a supervised approach: multilabel prediction based on other variables ? (like facebook)
+Try a supervised approach: one of the label based on affinities ? (like facebook)
 
