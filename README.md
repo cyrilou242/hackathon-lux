@@ -19,6 +19,7 @@ Python >= ???:
 ## Prediction Technical Specifications:
 ### Data:
 	The dataset was provided in the context of the an internal Accenture Hackathon. It will not be made public.  
+	You can find a sample example in [clusters-examples.csv](clusters-examples.csv).
 
  
 ### Input Features :
